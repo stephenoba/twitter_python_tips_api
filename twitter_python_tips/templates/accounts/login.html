@@ -1,0 +1,42 @@
+{% load account socialaccount %}
+
+{% get_providers as socialaccount_providers %}
+
+<div
+  class="modal fade"
+  id="loginModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-mdb-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+          <div class="socialaccount_ballot">
+            <div class="socialaccount_providers">
+              Sign in with
+              {% for provider in socialaccount_providers %}
+              <div class="list-group">
+                <a title="{{provider.name}}" class="list-group-item list-group-item-action socialaccount_provider {{provider.id}}"
+                   href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+                  <span><i class="fab fa-twitter"></i></span>
+                  {{provider.name}}
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% include "socialaccount/snippets/login_extra.html" %}
+      </div>
+    </div>
+  </div>
+</div>

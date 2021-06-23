@@ -1,0 +1,26 @@
+{% for tip in tips %}
+<div class="col-12 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+            Python tip #{{ tip.tweet_id }}
+        </h5>
+        <p class="card-text">
+          <pre>{{ tip.full_text|linebreaks }}</pre>
+        </p>
+        {% for link in tip.links.all %}
+        <p>
+          <a href="{{ link.url }}" target="_blank">{{ link.display_url }}</a>
+        </p>
+        {% endfor %}
+        <span>
+          <i class="far fa-heart"></i> {{ tip.num_likes }}
+        </span>
+        <span>
+          <i class="fas fa-retweet"></i> {{ tip.num_retweets }}
+        </span>
+        <span class="text-muted text-end"> | {{ tip.timestamp|timesince }} ago</span>
+      </div>
+    </div>
+</div>
+{% endfor %}

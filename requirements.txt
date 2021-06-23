@@ -1,0 +1,10 @@
+django==3.2
+python-dotenv==0.15.0
+tweepy==3.10.0
+celery==4.1.1
+redis==3.5.3
+django-filter==2.4.0
+django-allauth
+djangorestframework==3.12.4
+django-rest-auth==0.9.5
+fuzzywuzzy[speedup]
