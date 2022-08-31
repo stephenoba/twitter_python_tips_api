@@ -1,9 +1,9 @@
 # Twitter Python Tips with API
 
 This is just an extension of the
-[twitter python tips](#) project.
+[twitter python tips](https://github.com/stephenoba/twitter_python_tips) project.
 
-Follow same steps in the [twitter python tips](#)
+Follow same steps in the [twitter python tips](https://github.com/stephenoba/twitter_python_tips)
 project then add the following to your .env file;
 - ```GOOGLE_FORM_URL``` this is a url to the [@python_tip google form](https://docs.google.com/forms/d/e/1FAIpQLScsHklRH2-uplGYH_vxhtIin-zJS44bXQkAWCH7_N7nUdrGXw/viewform) or a form of similar structure.
 - ```GOOGLE_FORM_PYTHON_TIP_FIELD``` this is the input name (i.e ```<input name="get-this-value">```) of the python tip field.
